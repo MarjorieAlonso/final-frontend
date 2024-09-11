@@ -1,4 +1,4 @@
-import React ,{useState} from 'react'
+import {useState} from 'react'
 import { Link } from 'react-router-dom'
 
 
@@ -14,7 +14,6 @@ const Navbar = () => {
     <nav>
   
           <Link to="/">Home</Link>
-          {/*  //<Link to="/detalle">Detalle</Link> */}
             <Link to="/contact">Contact</Link>
            
           

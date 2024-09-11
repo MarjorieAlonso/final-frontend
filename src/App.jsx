@@ -6,8 +6,8 @@ import Contact from "./Routes/Contact";
 import Detail from "./Routes/Detail";
 import Favs from "./Routes/Favs"
 import { Route, Routes } from "react-router-dom";
-import { ContextProvider } from "./Components/utils/global.context";
-import './Css/App.css';
+import "./App.css"
+
 
 
 
@@ -15,20 +15,22 @@ import './Css/App.css';
 
 function App() {
   return (
-    <ContextProvider>
+
       <div className="App">
 
-    <Navbar/>
+<Navbar/>
     <Routes>
+   
         <Route path="/" element= {<Home/>} />
         <Route path="/contact" element= {<Contact/>} />
-        <Route path="/dentista/id" element= {<Detail/>} />
+        <Route path="/dentista/:id" element= {<Detail/>} />
         <Route path="/favs" element= {<Favs/>} />
+   
+    
     </Routes>
     <Footer/>
- 
       </div>
-      </ContextProvider>
+     
   );
 }
 
