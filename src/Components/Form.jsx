@@ -1,28 +1,28 @@
 //import React from "react";
-import { useGlobalContext } from "./utils/global.context";
+import { useContextGlobal } from "./utils/global.context";
 
 
 const Form = () => {
-const {nombre, setNombre,tel , setTel ,email, setEmail,error, setError }= useGlobalContext();//
+const {nombre, setNombre,tel , setTel ,email, setEmail,error, setError }= useContextGlobal();//
 const onChangeName =(e)=> setNombre(e.target.value);
   //Aqui deberan implementar el form completo con sus validaciones
  const validateForm =()=>{
   let valido = true;
-  const newErrors = {};
+  
   if(!nombre){
-    newErrors.nombre = "El nombre es requerido";
+    error.nombre = "El nombre es requerido";
     valido = false
   } if(!tel.match((/^[0-9]{10}$/))){
-    newErrors.telefono = "el telefono debe tener 10 digitos "
+    error.telefono = "el telefono debe tener 10 digitos "
     valido = false;
   }
   if(!email){
-    newErrors.correo  ="el correo electronico es requerido"
+    error.correo  ="el correo electronico es requerido"
 
   }else if(!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)){
-    newErrors.email =" Correo electronico no valido"
+    error.email =" Correo electronico no valido"
     valido =false 
-  } setError(newErrors)
+  } setError(error)
   return valido;
 }
  const handleSubmit =(e)=>{

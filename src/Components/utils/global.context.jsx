@@ -1,25 +1,13 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { createContext } from 'react';
 import axios from 'axios';
-export const initialState = {theme: "", data: []}
-export const ContextGlobal = createContext();
-const fav = JSON.parse(localStorage.getItem("favoritos")) || [];
-export const useGlobalContext = () => {
-  return useContext(ContextGlobal);
-};
 
+const ContextGlobal = createContext();
+const lsFavs = JSON.parse(localStorage.getItem("favorites")) || []
 
-export const ContextProvider = ({ children }) => {
+const Context = ({ children }) => {
   const [data, setData] = useState([]);
- const [detail, setDetail] = useState([]);
- const[favoritos, setFavoritos]= useState()
- const [nombre, setNombre] = useState("");
-  const [tel, setTel] = useState("");
-  const [email, setEmail] = useState("");
-/*   const [error, setError] = useState({
-    nombre: '',
-    telefono: '',
-    correo: ''
-  });  */
+  const [favoritos, setFavoritos] = useState(lsFavs);
 
   const url = "https://jsonplaceholder.typicode.com/users";
 
@@ -27,25 +15,21 @@ export const ContextProvider = ({ children }) => {
     axios(url).then((res) => {
       setData(res.data);
       console.log(res.data);
-    })
+    });
   }, []);
 
- 
-    const detalle ="https://jsonplaceholder.typicode.com/users/:id";
-    axios(detalle).then((res) => {
-      setDetail(res.data);
-      
-    })
-  
-    useEffect(() => {
-      localStorage.setItem("favoritos", JSON.stringify(favoritos));
-    }, [favoritos]);
-
+  useEffect(() => {
+    localStorage.setItem("favoritos", JSON.stringify(favoritos));
+  }, [favoritos]);
 
   return (
-    <ContextGlobal.Provider value={{data, setData,detail,setDetail,setEmail,email,nombre,setNombre,tel,setTel, favoritos,setFavoritos}}>
-      {children}
+    <ContextGlobal.Provider value={{ data, favoritos, setFavoritos }}>
+      {children} 
     </ContextGlobal.Provider>
   );
-  
+};
+
+export default Context;
+export const useContextGlobal = () => {
+  return useContext(ContextGlobal);
 };
