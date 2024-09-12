@@ -4,7 +4,7 @@ import { useContextGlobal } from "./utils/global.context";
 
 
 
-const Card = ({ data }) => {
+const Card = ({ name, username,id }) => {
  const { setFavoritos} = useContextGlobal()
  const addFav = () => {
   setFavoritos((favoritos) => [...favoritos, data]);
@@ -15,8 +15,8 @@ const Card = ({ data }) => {
         <img src="images/doctor.jpg" alt="doctor" width="200px"/>
           
            <h2> Nombre :{name}</h2>
-          <h3> Username:{data.username}</h3>
-           <h4> Id :{data.id}</h4> 
+          <h3> Username:{username}</h3>
+           <h4> Id :{id}</h4> 
         {/*   <Link to={"/dentista/"+ data.id}>
           <button>Ver detalle</button></Link> */}
       

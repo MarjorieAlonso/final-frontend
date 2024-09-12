@@ -10,9 +10,9 @@ const[favoritos]= useContextGlobal();
     <>
       <h1>Dentists Favs</h1>
       <div className="card-grid">
-        {favoritos.map((data)=>{
-          <Card key={data.id} data={data}/>
-        })}
+        {favoritos.map((data)=>(<Card key={data.id} data={data}/>)
+          
+        )}
         {/* este componente debe consumir los destacados del localStorage */}
         {/* Deberan renderizar una Card por cada uno de ellos */}
       </div>

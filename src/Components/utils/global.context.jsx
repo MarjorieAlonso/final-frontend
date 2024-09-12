@@ -1,13 +1,12 @@
 import { useState, useEffect, useContext } from 'react';
 import { createContext } from 'react';
 import axios from 'axios';
-
 const ContextGlobal = createContext();
-const lsFavs = JSON.parse(localStorage.getItem("favorites")) || []
+const lsFavs = JSON.parse(localStorage.getItem("favoritos")) || []
 
 const Context = ({ children }) => {
   const [data, setData] = useState([]);
-  const [favoritos, setFavoritos] = useState(lsFavs);
+  const [favoritos, setFavoritos] = useState([lsFavs]);
 
   const url = "https://jsonplaceholder.typicode.com/users";
 

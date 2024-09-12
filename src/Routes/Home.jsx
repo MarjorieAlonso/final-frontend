@@ -11,13 +11,15 @@ const Home = () => {
     <main className="" >
       <h1>Home</h1>
       <div className='card-grid'>
-        {data.map(()=>{
-          <Card  key={data.id}
-          name={data.name}
-          username={data.username}
-          id={data.id} 
-          data={data}/>
-        })} 
+      {data.map((item) => (
+          <Card 
+            key={item.id}
+            name={item.name}
+            username={item.username}
+            id={item.id}
+            data={item} 
+          />
+        ))}
        
       </div>
     </main>

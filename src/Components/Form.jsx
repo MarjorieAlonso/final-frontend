@@ -1,9 +1,13 @@
 //import React from "react";
-import { useContextGlobal } from "./utils/global.context";
+import { useState } from "react";
+
 
 
 const Form = () => {
-const {nombre, setNombre,tel , setTel ,email, setEmail,error, setError }= useContextGlobal();//
+  const [nombre, setNombre] = useState("");
+const [tel , setTel] = useState("");
+ const [email, setEmail] = useState("");
+ const [error, setError ]= useState("");//
 const onChangeName =(e)=> setNombre(e.target.value);
   //Aqui deberan implementar el form completo con sus validaciones
  const validateForm =()=>{
