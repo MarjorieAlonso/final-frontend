@@ -1,28 +1,33 @@
-import { useState, useEffect, useContext } from 'react';
+import {  useEffect, useContext, useReducer } from 'react';
 import { createContext } from 'react';
 import axios from 'axios';
+import { reducer } from '../../reducers/reducers';
 const ContextGlobal = createContext();
-const lsFavs = JSON.parse(localStorage.getItem("favoritos")) || []
-
+const lsFavs = JSON.parse(localStorage.getItem("favs")) || [];
+ const inicitalState ={
+  data:[],
+  favs: lsFavs,
+  theme:true,
+ };
 const Context = ({ children }) => {
-  const [data, setData] = useState([]);
-  const [favoritos, setFavoritos] = useState([lsFavs]);
-
+ /*  const [data, setData] = useState([]);
+  const [favoritos, setFavoritos] = useState([lsFavs]); */
+const [state , dispatch]= useReducer(reducer, inicitalState)
   const url = "https://jsonplaceholder.typicode.com/users";
 
   useEffect(() => {
     axios(url).then((res) => {
-      setData(res.data);
+      dispatch({type:"GET_DATA", payload:res.data});
       //console.log(res.data);
     });
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("favoritos", JSON.stringify(favoritos));
-  }, [favoritos]);
+    localStorage.setItem("favs", JSON.stringify(state.favs));
+  }, [state.favs]);
 
   return (
-    <ContextGlobal.Provider value={{ data, favoritos, setFavoritos }}>
+    <ContextGlobal.Provider value={{ state, dispatch }}>
       {children} 
     </ContextGlobal.Provider>
   );
