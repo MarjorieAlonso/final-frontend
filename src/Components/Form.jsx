@@ -23,8 +23,8 @@ const Form = () => {
     const emailRegex =/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const nombreValido =  usuario.nombre.trim().length >= 5;
    const telefonoValido = numRegex.test(usuario.telefono);
-   const emailValido =emailRegex.test(usuario.email) 
-    if (nombreValido && telefonoValido&&emailValido)
+   const emailValido = emailRegex.test(usuario.email) 
+    if (nombreValido && telefonoValido && emailValido)
        {
       setMensajeExito(true);
       setError(false);
