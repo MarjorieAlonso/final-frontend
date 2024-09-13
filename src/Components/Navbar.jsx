@@ -1,14 +1,15 @@
-import {useState} from 'react'
 import { Link } from 'react-router-dom'
+import { useContextGlobal } from './utils/Context';
 
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Navbar = () => {
-   const [theme, setTheme]= useState('ligth')
+  const {state, dispatch}=useContextGlobal();
   const cambiarTema =()=>{
-    setTheme(theme === 'light'? 'dark':'light')
-  } 
+    dispatch({type: "CAMBIAR_TEMA"})
+  };
+ 
 
   return (
     <nav>
@@ -20,7 +21,7 @@ const Navbar = () => {
           
   
       {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
-      <button onClick={cambiarTema} >Change theme</button>
+      <button  className="button"onClick={cambiarTema} >Cambiar tema a {state.isDarkMode ?'claro':'oscuro'}</button>
     </nav>
   )
 }

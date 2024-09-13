@@ -1,0 +1,30 @@
+.App {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .dark-mode {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .light-mode {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .navbar {
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .button {
+    padding: 10px;
+    border: none;
+    background-color: #88abd1;
+    color: #fff;
+    cursor: pointer;
+  }

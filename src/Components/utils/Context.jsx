@@ -2,20 +2,15 @@ import {  useEffect, useContext, useReducer } from 'react';
 import { createContext } from 'react';
 import axios from 'axios';
 import { reducer } from '../../reducers/reducers';
-
 const ContextGlobal = createContext();
-
 const lsFavs = JSON.parse(localStorage.getItem("favs")) || [];
-
  const inicitalState ={
   data:[],
-  favs: lsFavs,
+  favs: [lsFavs],
   theme:true,
  };
- 
 const Context = ({ children }) => {
- /*  const [data, setData] = useState([]);
-  const [favoritos, setFavoritos] = useState([lsFavs]); */
+
 const [state , dispatch]= useReducer(reducer, inicitalState)
   const url = "https://jsonplaceholder.typicode.com/users";
 
@@ -38,7 +33,6 @@ const [state , dispatch]= useReducer(reducer, inicitalState)
 };
 
 export default Context;
-
 export const useContextGlobal = () => {
   return useContext(ContextGlobal);
 };

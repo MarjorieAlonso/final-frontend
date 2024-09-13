@@ -4,15 +4,13 @@ export const reducer =(state,action)=>{
             return{...state, data:action.payload};
         case "ADD_FAV":
             return{...state, favs:[...state.favs,action.payload] };
-        case "REMOVE_FAV":
+        case "DELETE_FAV":
             // eslint-disable-next-line no-case-declarations
             const favFiltrados = state.favs.filter(
                 (fav) => fav.id !== action.payload.id
               );
               return { ...state, favs: favFiltrados };
-        case "TOOGLE_THEME":
-                return{...state, theme: !state.theme}       
-            default:
-                throw new Error();
+        case "CAMBIAR_TEMA":
+            return{...state , isDarkMode : !state.isDarkMode};
     }
 }
