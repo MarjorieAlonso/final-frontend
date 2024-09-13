@@ -2,6 +2,7 @@ import {  useEffect, useContext, useReducer } from 'react';
 import { createContext } from 'react';
 import axios from 'axios';
 import { reducer } from '../../reducers/reducers';
+
 const ContextGlobal = createContext();
 const lsFavs = JSON.parse(localStorage.getItem("favs")) || [];
  const inicitalState ={

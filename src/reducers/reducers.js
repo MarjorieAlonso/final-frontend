@@ -11,6 +11,8 @@ export const reducer =(state,action)=>{
               );
               return { ...state, favs: favFiltrados };
         case "TOOGLE_THEME":
-            return{...state}
+                return{...state, theme: !state.theme}       
+            default:
+                throw new Error();
     }
 }
