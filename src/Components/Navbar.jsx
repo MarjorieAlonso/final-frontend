@@ -15,6 +15,7 @@ const Navbar = () => {
   
           <Link to="/">Home</Link>
             <Link to="/contact">Contact</Link>
+            <Link to = "/fav">Favoritos</Link>
            
           
   

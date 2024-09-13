@@ -1,5 +1,5 @@
 //import React from 'react'
-import {useContextGlobal} from "../Components/utils/global.context"
+import {useContextGlobal} from "../Components/utils/Context"
 
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context

@@ -6,7 +6,7 @@ import Contact from "./Routes/Contact";
 import Detail from "./Routes/Detail";
 import Favs from "./Routes/Favs"
 import { Route, Routes } from "react-router-dom";
-import "./App.css"
+//import "./App.css"
 
 
 
