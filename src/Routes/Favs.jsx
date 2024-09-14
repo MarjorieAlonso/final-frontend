@@ -10,7 +10,7 @@ const{state}= useContextGlobal();
     <>
       <h1>Dentistas favoritos </h1>
       <div className="card-grid">
-        {state.map((item)=>(<Card key={item.id} data={item}/>)
+        {state.favs.map((item)=>(<Card key={item.id} data={item}/>)
           
         )}
        

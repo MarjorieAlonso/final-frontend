@@ -1,23 +1,25 @@
-//import React from "react";
+///import React from "react";
 import { Link } from "react-router-dom";
 import { useContextGlobal } from "./utils/Context";
+import { useParams } from 'react-router-dom';
 
 
 
-const Card = ({ item}) => {
+const Card = ({ data}) => {
  const { state, dispatch} = useContextGlobal();
- const isFav = state.favs.find((fav)=>fav.id === item.id)
+ const params=useParams()
+ const isFav = state.favs.find((fav)=>fav.id === data.id)
  const addFav = () => {
-  dispatch({type:isFav ? "REMOVE_FAV": "ADD_FAV", payload:item});
+  dispatch({type:isFav ? "REMOVE_FAV": "ADD_FAV", payload:data});
 };
 
     return (
       <div className="card">
         <img src="images/doctor.jpg" alt="doctor" width="200px"/>
-          <h2> Nombre :{item.name}</h2>
-          <h3> Username:{item.username}</h3>
-           <h4> Id :{item.id}</h4> 
-          <Link to={"/dentista/:id"}>
+          <h2> Nombre :{data.name}</h2>
+          <h3> Username:{data.username}</h3>
+           <h4> Id :{data.id}</h4> 
+           <Link to={`/dentista/${params.id}`}>
           <button>Ver detalle</button></Link> 
       
   
