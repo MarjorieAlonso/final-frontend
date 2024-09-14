@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useParams } from 'react-router-dom';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
@@ -22,7 +23,8 @@ useEffect(() =>{
       setShow(false)  
     },1000)
   })
-},[url]);
+
+},[]);
 
   return (
     <>
