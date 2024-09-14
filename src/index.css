@@ -12,7 +12,7 @@ code {
     monospace;
 }
 .favButton{
-  background-color: rgba(214, 90, 90, 0.116);
+  background-color: #b7dbe9ce; 
   padding: 10px;
   border-radius: 10px;
   width: 100%;
@@ -22,12 +22,12 @@ code {
 }
 
 .favButton:hover {
-  background-color: #84c8b8; 
+  background-color:  #54bde6ce; 
   transform: translateY(-2px);
 }
 
 .favButton:active {
-  background-color: #84c8b8; 
+  background-color:  #54bde6ce; 
   transform: translateY(-2px);
 }
 
@@ -144,7 +144,7 @@ tr:nth-child(even) {
   cursor: pointer; /* Cambia el cursor al pasar el mouse */
 }
 .dark-mode {
-  background-color: #030303b9;
+  background-color: #030303;
   color: white;
 }
 .dark-mode a, h4{
