@@ -130,6 +130,9 @@ tr:nth-child(even) {
   background-color: #000;
   color: white;
 }
+.dark-mode nav{
+color: white;
+}
 .dark > a {
   color: white;
 }

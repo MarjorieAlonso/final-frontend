@@ -24,7 +24,7 @@ const Card = ({ data}) => {
       
   
           {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-          <button onClick={addFav} className="favButton">Añadir a favoritos</button>
+          <button onClick={addFav} className="favButton">{isFav ? "descartar de favoritos🤍" : "añadir a favoritos❤️"}</button>
       </div>
     );
   };
