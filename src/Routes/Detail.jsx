@@ -4,16 +4,18 @@ import {useState, useEffect} from 'react';
 import axios from 'axios';
 
 
+
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Detail = () => {
   const [show,setShow] = useState(true)
   const params=useParams()
   const [dentist,setDentist]=useState()
+
  
   
   // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
-   const url=`https://jsonplaceholder.typicode.com/users/${params.id}`
+  const url=`https://jsonplaceholder.typicode.com/users/${params.id}`
 
 useEffect(() =>{
   axios(url)

@@ -1,13 +1,13 @@
 ///import React from "react";
 import { Link } from "react-router-dom";
 import { useContextGlobal } from "./utils/Context";
-import { useParams } from 'react-router-dom';
+//import { useParams } from 'react-router-dom';
 
 
 
 const Card = ({ data}) => {
  const { state, dispatch} = useContextGlobal();
- const params=useParams()
+ //const params=useParams()
  const isFav = state.favs.find((fav)=>fav.id === data.id)
  const addFav = () => {
   dispatch({type:isFav ? "REMOVE_FAV": "ADD_FAV", payload:data});
@@ -19,7 +19,7 @@ const Card = ({ data}) => {
           <h2> Nombre :{data.name}</h2>
           <h3> Username:{data.username}</h3>
            <h4> Id :{data.id}</h4> 
-           <Link to={`/dentista/${params.id}`}>
+           <Link to={`/dentista/${data.id}`}>
           <button>Ver detalle</button></Link> 
       
   

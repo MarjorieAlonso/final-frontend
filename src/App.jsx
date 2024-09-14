@@ -9,10 +9,6 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css"
 import { useContextGlobal } from "./Components/utils/Context";
 
-
-
-
-
 function App() {
   const {state} = useContextGlobal();
 
@@ -27,7 +23,7 @@ function App() {
         <Route path="/contact" element= {<Contact/>} />
         <Route path="/dentista/:id" element= {<Detail/>} />
         <Route path="/fav" element= {<Favs/>} />
-   
+        <Route path="*" element= {<h1>Page not found</h1>} />
     
     </Routes>
     <Footer/>
