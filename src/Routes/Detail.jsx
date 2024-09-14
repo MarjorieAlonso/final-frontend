@@ -23,7 +23,6 @@ useEffect(() =>{
       setShow(false)  
     },1000)
   })
-
 },[]);
 
   return (
