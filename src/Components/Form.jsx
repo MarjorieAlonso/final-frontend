@@ -46,7 +46,7 @@ const Form = () => {
   }
 
   return (
-    <>
+    <div className="Form">
       {mensajeExito ? 
         <Mensaje usuario={usuario}></Mensaje>
       : (
@@ -86,7 +86,7 @@ const Form = () => {
       )}
 
       {error && (<h3>Por favor, complete el formulario correctamente.</h3>)}
-    </>
+    </div>
   );
 };
 

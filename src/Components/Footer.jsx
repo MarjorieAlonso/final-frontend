@@ -3,8 +3,8 @@
 const Footer = () => {
   return (
     <footer>
-        <p>Powered by</p>
-        <img src="./images/DH.png" alt='DH-logo' />
+        <p>Marjorie Alonso y Melissa Guerra , sept 2024</p>
+        <p>Todos los derechos reservados</p>
     </footer>
   )
 }
